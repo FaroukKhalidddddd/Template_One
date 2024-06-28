@@ -1,0 +1,96 @@
+$Theme: "Light";
+
+@if $Theme == "Light" {
+  header {
+    padding: 5px;
+    z-index: 100;
+    position: sticky;
+    background-color: var(--section-background);
+    top: 0;
+    .Container {
+      padding: 10px;
+      background-color: var(--section-background);
+      display: flex;
+      justify-content: space-between;
+
+      .Logo {
+        width: 70px;
+      }
+      .Links {
+        position: relative;
+        .Burger-Icon {
+          width: 30px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          //Placeholder
+          %Icon {
+            background-color: #333;
+            width: 30px;
+            height: 2px;
+            margin-bottom: 5px;
+            display: flex;
+            flex-flow: row wrap;
+          }
+          .Icon-1 {
+            @extend %Icon;
+          }
+          .Icon-2 {
+            @extend %Icon;
+            width: 65%;
+            transition: var(--main-duration);
+          }
+          .Icon-3 {
+            @extend %Icon;
+          }
+        }
+        ul {
+          background-color: var(--section-background);
+          margin: 0;
+          padding: 0;
+          position: absolute;
+          list-style: none;
+          right: 0;
+          top: calc(100% + 15px);
+          z-index: 1;
+          min-width: 200px;
+          display: none;
+          &::before {
+            content: " ";
+
+            border: 10px solid transparent {
+              bottom: {
+                color: black;
+              }
+            }
+            position: absolute;
+            right: 5px;
+            top: -20px;
+          }
+          li {
+            &:not(:last-child) {
+              border-bottom: 1px solid #ddd;
+            }
+            a {
+              display: block;
+              padding: 15px;
+              text-decoration: none;
+              color: #333;
+              transition: var(--main-duration);
+              &:hover {
+                padding-left: 35px;
+              }
+            }
+          }
+        }
+        // &:hover ul {
+        //   display: block;
+        // }
+
+        &:hover .Burger-Icon .Icon-2 {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

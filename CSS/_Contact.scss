@@ -1,0 +1,58 @@
+.Contact {
+  margin-top: 5vh;
+  padding-top: 5vh;
+  min-height: 50vh;
+  background-color: var(--section-background);
+  .Container {
+    display: grid;
+    grid-template-rows: 10vh 2.5vh 37.5vh;
+    grid-template-areas: "hh" "Pr" "CC";
+    height: 50vh;
+    .Spacial-Header {
+      & + p {
+        margin-top: -3vh;
+      }
+    }
+    .Parent {
+      grid-area: CC;
+      background-color: #777;
+    }
+    .Info {
+      .Label {
+        font-size: 2em;
+        font-weight: 800;
+        text-align: center;
+        letter-spacing: -2px;
+        color: var(--secondary-color);
+        margin-bottom: 2vh;
+      }
+      .Link {
+        font-size: 2em;
+        font-weight: 800;
+        text-align: center;
+        letter-spacing: 2px;
+        display: block;
+        color: var(--main-color);
+      }
+      .Social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // background-color: yellow;
+        gap: 2%;
+        p {
+          display: inline-block;
+          // background-color: red;
+        }
+        .Icons {
+          display: inline-flex;
+          color: var(--secondary-color);
+          gap: 20%;
+          i {
+            font-size: 1.15em;
+          }
+        }
+      }
+    }
+  }
+}

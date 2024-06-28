@@ -1,0 +1,13 @@
+.Footer {
+    margin-top: 2vh;
+
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 30px 10px;
+    text-align: center;
+    font-size: 1.2em;
+    span {
+        font-weight: bold;
+        color: var(--main-color);
+      }
+  }

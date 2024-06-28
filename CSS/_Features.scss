@@ -1,0 +1,95 @@
+.Features {
+  min-height: 39vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .Container {
+    background-color: var(--section-background);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 3vh;
+
+    %Feature {
+      box-shadow: 0 5px 25px rgba(1, 1, 1, 0.15);
+      margin: 10px 0.5%;
+      padding: 15px 0.5%;
+      border-radius: 15px;
+      transition: 0.7s ease;
+      align-content: center;
+      &:hover {
+        transform: scale(1.08);
+      }
+      i {
+        color: var(--main-color);
+        font-size: 3em;
+        margin-bottom: 30px;
+      }
+      h2 {
+        margin: 0;
+        font-weight: 700;
+      }
+      p {
+        font-weight: 400;
+        line-height: 1.5;
+      }
+    }
+    .Feature-1 {
+      @extend %Feature;
+    }
+    .Feature-2 {
+      @extend %Feature;
+    }
+    .Feature-3 {
+      @extend %Feature;
+    }
+  }
+}
+@media (min-width: 2500px) {
+  .Features {
+    display: flex;
+    min-height: 30vh;
+    .Container {
+      margin-top: 5vh;
+    }
+  }
+}
+@media (min-width: 775px) and (max-width: 1150px) {
+  .Features {
+    .Container {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto auto;
+      grid-template-areas: "F1 F2" "F3 F3";
+      .Feature-1 {
+        grid-area: F1;
+      }
+      .Feature-2 {
+        grid-area: F2;
+      }
+      .Feature-3 {
+        grid-area: F3;
+      }
+    }
+  }
+}
+
+@media (max-width: 370px) {
+  .Features {
+    .Container {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto auto;
+      grid-template-areas: "F1 F2" "F3 F3";
+      .Feature-1 {
+        grid-area: F1;
+      }
+      .Feature-2 {
+        grid-area: F2;
+      }
+      .Feature-3 {
+        grid-area: F3;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.Container {
+  // background-color: yellow;
+  width: 85%;
+  padding-left: 1%;
+  padding-right: 1%;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+.Spacial-Header {
+  grid-area: hh;
+  color: #ebeced;
+  font-size: 7em;
+  text-align: center;
+  letter-spacing: -3px;
+  margin: 0;
+  // background-color: blue;
+  & + p {
+    grid-area: Pr;
+    text-align: center;
+    margin-top: -13vh;
+    color: #797979;
+    font-size: 1.5em;
+    // background-color: rgba(255, 255, 0, 0.63);
+  }
+}

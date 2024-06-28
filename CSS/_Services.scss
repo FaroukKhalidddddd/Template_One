@@ -1,0 +1,79 @@
+.Services {
+  margin-top: 5vh;
+  padding-top: 5vh;
+  min-height: 100vh;
+  background-color: var(--section-background);
+  .Container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    grid-template-rows: 20vh 5vh 75vh;
+    grid-template-areas: "hh hh" "Pr Pr" "Parent Image";
+    padding-bottom: 10vh;
+    .Parent {
+      grid-area: Parent;
+      align-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      .Service-Card {
+        display: flex;
+        margin: 10px 0;
+        justify-content: space-evenly;
+        flex-flow: row wrap;
+        i {
+          display: inline-block;
+          width: 10%;
+          font-size: 2em;
+          text-align: center;
+          align-self: flex-start;
+          color: var(--main-color);
+        }
+        .Info {
+          display: inline-block;
+          margin: 10px 0;
+          width: 80%;
+          h3 {
+            margin: 0 {
+              bottom: 20px;
+            }
+          }
+        }
+      }
+    }
+    .Image {
+      grid-area: Image;
+      background-image: url("../Images/Background_1111.jpg");
+      width: 65%;
+      height: 60%;
+      border-radius: 10px;
+      position: relative;
+      background-size: cover;
+      background-color: black;
+      justify-self: center;
+      align-self: center;
+      z-index: 11;
+    }
+    .Image_Shap {
+      background-color: rgb(58, 58, 58);
+      width: 5%;
+      height: calc(40% + 200px);
+      right: 2%;
+      bottom: 17vh;
+      position: absolute;
+      z-index: 10;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .Services {
+    .Container {
+      grid-template-areas: "hh hh" "Pr Pr" "Parent Parent";
+      .Image {
+        display: none;
+      }
+      .Image_Shap {
+        display: none;
+      }
+    }
+  }
+}

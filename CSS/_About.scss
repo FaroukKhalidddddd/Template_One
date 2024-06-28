@@ -1,0 +1,116 @@
+.About {
+  margin-top: 5vh;
+  padding-top: 5vh;
+  min-height: 100vh;
+  background-color: var(--section-background);
+  .Container {
+    min-height: 100vh;
+    padding-bottom: 10vh;
+    display: grid;
+    grid-template-rows: 20vh 5vh 75vh;
+    grid-template-areas: "hh" "Pr" "CC";
+    .Parent {
+      grid-area: CC;
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      grid-template-areas: "Sec2 Sec1";
+      column-gap: 1%;
+      .Section-1 {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        grid-area: Sec1;
+        p:first-of-type {
+          padding: {
+            left: 1%;
+            right: 1%;
+          }
+          line-height: 2;
+          margin-bottom: 50px;
+          font-weight: 700;
+        }
+        hr {
+          width: 50%;
+          height: 0;
+          border-color: var(--main-color);
+        }
+        p:last-of-type {
+          padding: {
+            left: 1%;
+            right: 1%;
+          }
+          line-height: 2;
+          color: #777;
+        }
+      }
+      .Section-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        .Image-Div {
+          position: absolute;
+          width: 60%;
+          height: 50vh;
+          left: 5%;
+          z-index: 100;
+          &::before {
+            content: " ";
+            background-color: #ebeced;
+            width: 30%;
+            height: calc(100% + 50px);
+            position: absolute;
+            top: -50px;
+            left: -15%;
+            z-index: -1;
+          }
+          &::after {
+            content: " ";
+            position: absolute;
+            top: -50px;
+            width: 35%;
+            height: 80%;
+            z-index: -1;
+            right: -45%;
+            border : {
+              left: 80px solid var(--main-color);
+              bottom: 80px solid var(--main-color);
+            }
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 765px) {
+  .About {
+    .Container {
+      padding-bottom: 5vh;
+      .Parent {
+        grid-template-rows: 3fr 3fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "Sec2" "Sec1";
+        row-gap: 1%;
+        .Section-2 {
+          .Image-Div {
+            width: 40%;
+            height: 40vh;
+            left: 33%;
+            top: -6vh;
+            &::after {
+              display: none;
+            }
+            &::before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
